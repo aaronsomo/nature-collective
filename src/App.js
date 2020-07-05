@@ -4,6 +4,7 @@ import Input from './components/Input';
 import queryAPI from './utilities/queryAPI';
 import Loader from './components/Loader';
 import Error from './components/Error';
+import NoResults from './components/NoResults';
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class App extends Component {
   };
 
   render() {
-    let { results, loading, error } = this.state;
+    let { results, loading, error, noResultsText } = this.state;
     return (
       <div className="App">
         <h1 className="app-title">Nature Collective</h1>
@@ -52,6 +53,9 @@ class App extends Component {
         {loading && <Loader />}
         <section className="image-results">
           {results.length > 0 && <RenderImageCards array={results} />}
+          {results.length === 0 && !loading && (
+            <NoResults text={noResultsText} />
+          )}
         </section>
       </div>
     );
