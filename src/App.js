@@ -13,7 +13,7 @@ class App extends Component {
       loading: false,
       error: false,
       results: [],
-      noResultsText: 'No results, try again!',
+      noResultsText: ' No results, try again!',
     };
   }
 
