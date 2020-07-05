@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RenderImageCards from './components/RenderImageCards';
 import Input from './components/Input';
 import queryAPI from './utilities/queryAPI';
+import Loader from './components/Loader';
 
 class App extends Component {
   constructor(props) {
@@ -41,11 +42,12 @@ class App extends Component {
   };
 
   render() {
-    let { results } = this.state;
+    let { results, loading } = this.state;
     return (
       <div className="App">
         <h1 className="app-title">Nature Collective</h1>
         <Input onSubmit={this.handleSubmitQuery} clearApp={this.clearApp} />
+        {loading && <Loader />}
         <section className="image-results">
           {results.length > 0 && <RenderImageCards array={results} />}
         </section>
