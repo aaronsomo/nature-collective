@@ -8,7 +8,12 @@ const ImageCard = ({ data }) => {
   let authorText = author ? author : 'No author found';
 
   return (
-    <div className="image-card--container">
+    <div
+      className={
+        selected ? 'image-card--container-selected' : 'image-card--container'
+      }
+      onClick={() => setSelected(!selected)}
+    >
       <img className="image-card--img" alt="img" src={thumbnailImg} />
       <div className="image-card--info--container">
         <div className="image-card--info">
@@ -24,8 +29,8 @@ const ImageCard = ({ data }) => {
           >
             View Source
           </a>
-          <input type="checkbox" id="selectedCard" />
-          <label for="selectedCard"> Select Image</label>
+          {/* <input type="checkbox" id="selectedCard" />
+          <label for="selectedCard"> Select Image</label> */}
         </div>
       </div>
     </div>
