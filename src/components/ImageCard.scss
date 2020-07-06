@@ -16,7 +16,8 @@ BOOK CARDS
 }
 
 .image-card--container-selected {
-  background-color: green;
+  background-color: #6ef5ff;
+  // opacity: 0.1;
   box-shadow: $box-shadow;
   display: grid;
   grid-template-columns: 1fr 2fr;
