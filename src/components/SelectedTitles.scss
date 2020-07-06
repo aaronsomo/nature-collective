@@ -1,0 +1,57 @@
+@import '../shared';
+
+/*
+==========================
+SELECTED TITLES
+==========================
+*/
+
+.selected-titles-container {
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 50vw;
+  padding: 8px;
+  border: none;
+  box-shadow: $box-shadow;
+  color: $dark-grey;
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+h2 {
+  color: #a1a1a1;
+}
+
+.selected-titles {
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 50vw;
+  padding: 8px;
+  border: none;
+  color: $dark-grey;
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+/*
+==========================
+MEDIA QUERY
+==========================
+*/
+
+@media (max-width: 550px) {
+  #query-input {
+    width: 60%;
+  }
+}
+
+@media (max-width: 340px) {
+  #query-input {
+    width: 100%;
+  }
+  .query-btn {
+    width: 100%;
+  }
+}

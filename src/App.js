@@ -5,6 +5,7 @@ import queryAPI from './utilities/queryAPI';
 import Loader from './components/Loader';
 import Error from './components/Error';
 import NoResults from './components/NoResults';
+import SelectedTitles from './components/SelectedTitles';
 import './App.scss';
 
 class App extends Component {
@@ -71,11 +72,7 @@ class App extends Component {
       <div className="App">
         <h1 className="app-title">Nature Collective</h1>
         <Input onSubmit={this.handleSubmitQuery} clearApp={this.clearApp} />
-        {this.state.selectedTitles.map((title, idx) => (
-          <div className="selected-titles" key={idx}>
-            {title}
-          </div>
-        ))}
+        <SelectedTitles selectedTitles={this.state.selectedTitles} />
         {error && <Error error={error} />}
         {loading && <Loader />}
         <section className="image-results">
