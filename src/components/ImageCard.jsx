@@ -12,12 +12,16 @@ const ImageCard = ({ data, handleSelect }) => {
       className={
         selected ? 'image-card--container-selected' : 'image-card--container'
       }
-      onClick={() => {
-        setSelected(!selected);
-        handleSelect(title);
-      }}
     >
-      <img className="image-card--img" alt="img" src={thumbnailImg} />
+      <img
+        className="image-card--img"
+        alt="img"
+        src={thumbnailImg}
+        onClick={() => {
+          setSelected(!selected);
+          handleSelect(title);
+        }}
+      />
       <div className="image-card--info--container">
         <div className="image-card--info">
           <h2 className="image-card--title">{title}</h2>
