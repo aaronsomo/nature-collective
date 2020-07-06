@@ -17,25 +17,12 @@ BOOK CARDS
 
 .image-card--container-selected {
   background-color: #6ef5ff;
-  // opacity: 0.1;
   box-shadow: $box-shadow;
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 20px;
   margin-bottom: 50px;
   grid-gap: 30px;
-}
-
-label {
-  background-color: white;
-}
-
-#selectedCard {
-  margin-left: 30px;
-}
-
-#selectedCard:checked + label {
-  background-color: green;
 }
 
 .image-card--img {
