@@ -15,6 +15,28 @@ BOOK CARDS
   grid-gap: 30px;
 }
 
+.image-card--container-selected {
+  background-color: green;
+  box-shadow: $box-shadow;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 20px;
+  margin-bottom: 50px;
+  grid-gap: 30px;
+}
+
+label {
+  background-color: white;
+}
+
+#selectedCard {
+  margin-left: 30px;
+}
+
+#selectedCard:checked + label {
+  background-color: green;
+}
+
 .image-card--img {
   width: auto;
   height: 250px;
