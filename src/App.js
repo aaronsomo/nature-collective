@@ -5,15 +5,18 @@ import queryAPI from './utilities/queryAPI';
 import Loader from './components/Loader';
 import Error from './components/Error';
 import NoResults from './components/NoResults';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.starterText = 'Nothing Here Yet - Try Searching For An Image!';
+    this.nothingFoundText = 'Nothing Found! Try Another Query.';
     this.state = {
       loading: false,
       error: false,
       results: [],
-      noResultsText: ' No results, try again!',
+      noResultsText: this.starterText,
     };
   }
 
