@@ -17,6 +17,7 @@ class App extends Component {
       error: false,
       results: [],
       noResultsText: this.starterText,
+      selectedTitles: ['test1', 'test2'],
     };
   }
 
@@ -42,6 +43,24 @@ class App extends Component {
     });
   };
 
+  handleSelect = (selected) => {
+    console.log(selected);
+    if (this.state.selectedTitles.includes(selected) === false) {
+      this.setState({
+        selectedTitles: [...this.state.selectedTitles, selected],
+      });
+    } else {
+      let tempList = this.state.selectedTitles;
+
+      tempList = tempList.filter(function(array) {
+        return array !== selected;
+      });
+      this.setState({
+        selectedTitles: tempList,
+      });
+    }
+  };
+
   clearApp = () => {
     this.setState({ error: false, results: [] });
   };
@@ -52,10 +71,20 @@ class App extends Component {
       <div className="App">
         <h1 className="app-title">Nature Collective</h1>
         <Input onSubmit={this.handleSubmitQuery} clearApp={this.clearApp} />
+        {this.state.selectedTitles.map((title, idx) => (
+          <div className="selected-titles" key={idx}>
+            {title}
+          </div>
+        ))}
         {error && <Error error={error} />}
         {loading && <Loader />}
         <section className="image-results">
-          {results.length > 0 && <RenderImageCards array={results} />}
+          {results.length > 0 && (
+            <RenderImageCards
+              array={results}
+              handleSelect={this.handleSelect}
+            />
+          )}
           {results.length === 0 && !loading && (
             <NoResults text={noResultsText} />
           )}

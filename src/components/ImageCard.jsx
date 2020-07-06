@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ImageCard.scss';
 
-const ImageCard = ({ data }) => {
+const ImageCard = ({ data, handleSelect }) => {
   const [selected, setSelected] = useState(false);
   const { title, author, image, source } = data;
   let thumbnailImg = image ? image : require('../assets/image_placeholder.jpg');
@@ -12,7 +12,10 @@ const ImageCard = ({ data }) => {
       className={
         selected ? 'image-card--container-selected' : 'image-card--container'
       }
-      onClick={() => setSelected(!selected)}
+      onClick={() => {
+        setSelected(!selected);
+        handleSelect(title);
+      }}
     >
       <img className="image-card--img" alt="img" src={thumbnailImg} />
       <div className="image-card--info--container">
@@ -29,8 +32,6 @@ const ImageCard = ({ data }) => {
           >
             View Source
           </a>
-          {/* <input type="checkbox" id="selectedCard" />
-          <label for="selectedCard"> Select Image</label> */}
         </div>
       </div>
     </div>
