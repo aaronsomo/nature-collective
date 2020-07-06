@@ -45,7 +45,6 @@ class App extends Component {
   };
 
   handleSelect = (selected) => {
-    console.log(selected);
     if (this.state.selectedTitles.includes(selected) === false) {
       this.setState({
         selectedTitles: [...this.state.selectedTitles, selected],
