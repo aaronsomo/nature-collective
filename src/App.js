@@ -18,7 +18,7 @@ class App extends Component {
       error: false,
       results: [],
       noResultsText: this.starterText,
-      selectedTitles: ['test1', 'test2'],
+      selectedTitles: [],
     };
   }
 
@@ -67,12 +67,14 @@ class App extends Component {
   };
 
   render() {
-    let { results, loading, error, noResultsText } = this.state;
+    let { results, loading, error, noResultsText, selectedTitles } = this.state;
     return (
       <div className="App">
         <h1 className="app-title">Nature Collective</h1>
         <Input onSubmit={this.handleSubmitQuery} clearApp={this.clearApp} />
-        <SelectedTitles selectedTitles={this.state.selectedTitles} />
+        {selectedTitles.length > 0 ? (
+          <SelectedTitles selectedTitles={selectedTitles} />
+        ) : null}
         {error && <Error error={error} />}
         {loading && <Loader />}
         <section className="image-results">
