@@ -71,8 +71,8 @@ class App extends Component {
       <div className="App">
         <h1 className="app-title">Nature Collective</h1>
         <Input onSubmit={this.handleSubmitQuery} clearApp={this.clearApp} />
-        {selectedTitles.length > 0 ? (
-          <SelectedTitles selectedTitles={selectedTitles} />
+        {results.length > 0 ? (
+          <SelectedTitles selectedTitles={selectedTitles} results={results} />
         ) : null}
         {error && <Error error={error} />}
         {loading && <Loader />}
