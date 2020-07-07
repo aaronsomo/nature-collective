@@ -5,7 +5,6 @@ const SelectedTitles = ({ selectedTitles, results }) => {
   return (
     <div className="selected-titles-container">
       <h2>Selected Images:</h2>
-      {console.log(results.length)}
       {results.length > 0 && selectedTitles.length < 1 ? (
         <div className="selected-titles">None</div>
       ) : (
