@@ -18,6 +18,7 @@ const Input = (props) => {
   const handleKeyPress = (e, input) => {
     if (e.key === 'Enter') {
       props.onSubmit(input);
+      e.target.blur();
     }
   };
 
