@@ -1,62 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Input.scss';
 
-class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: '',
-    };
-  }
+const Input = (props) => {
+  const [input, setInput] = useState('');
 
-  handleUserInput = (e) => {
+  const handleUserInput = (e) => {
     e.preventDefault();
-    let { value, name } = e.currentTarget;
+
+    let { value } = e.currentTarget;
     if (value === '') {
-      this.props.clearApp();
+      props.clearApp();
     }
-    this.setState({ [name]: value }, () => {
-      console.log(this.state);
-    });
+
+    setInput(value);
   };
 
-  handleKeyPress = (e) => {
-    let { input } = this.state;
+  const handleKeyPress = (e, input) => {
     if (e.key === 'Enter') {
-      this.props.onSubmit(input);
+      props.onSubmit(input);
     }
   };
 
-  render() {
-    let { input } = this.state;
-
-    return (
-      <>
-        <input
-          id="query-input"
-          type="search"
-          name="input"
-          value={input}
-          placeholder="Search for an image of nature"
-          onChange={(e) => {
-            this.handleUserInput(e);
-          }}
-          onKeyUp={(e) => {
-            this.handleKeyPress(e);
-          }}
-        />
-        <button
-          className="query-btn"
-          type="button"
-          onClick={() => {
-            this.props.onSubmit(input);
-          }}
-        >
-          Search
-        </button>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <input
+        id="query-input"
+        type="search"
+        name="input"
+        value={input}
+        placeholder="Search for an image of nature"
+        onChange={(e) => {
+          handleUserInput(e);
+        }}
+        onKeyUp={(e) => {
+          handleKeyPress(e, input);
+        }}
+      />
+      <button
+        className="query-btn"
+        type="button"
+        onClick={() => {
+          props.onSubmit(input);
+        }}
+      >
+        Search
+      </button>
+    </>
+  );
+};
 
 export default Input;
