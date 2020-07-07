@@ -5,7 +5,7 @@ const SelectedTitles = ({ selectedTitles, results }) => {
   return (
     <div className="selected-titles-container">
       <h2>Selected Images:</h2>
-      {results.length > 0 && selectedTitles.length < 1 ? (
+      {selectedTitles.length < 1 ? (
         <div className="selected-titles">None</div>
       ) : (
         selectedTitles.map((title, idx) => {
