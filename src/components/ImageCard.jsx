@@ -4,6 +4,7 @@ import './ImageCard.scss';
 const ImageCard = ({ data, handleSelect }) => {
   const [selected, setSelected] = useState(false);
   const { title, author, image, source } = data;
+  let titleText = title.length > 0 ? title : 'untitled';
   let thumbnailImg = image ? image : require('../assets/image_placeholder.jpg');
   let authorText = author ? author : 'No author found';
 
@@ -24,7 +25,7 @@ const ImageCard = ({ data, handleSelect }) => {
       />
       <div className="image-card--info--container">
         <div className="image-card--info">
-          <h2 className="image-card--title">{title}</h2>
+          <h2 className="image-card--title">{titleText}</h2>
           <h3 className="image-card--subtext">{`By: ${authorText}`}</h3>
         </div>
         <div className="image-card--btn">

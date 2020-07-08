@@ -11,7 +11,7 @@ const SelectedTitles = ({ selectedTitles, results }) => {
         selectedTitles.map((title, idx) => {
           return (
             <div className="selected-titles" key={idx}>
-              {title}
+              {title.length > 0 ? title : 'untitled'}
             </div>
           );
         })
