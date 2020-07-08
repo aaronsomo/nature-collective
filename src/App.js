@@ -45,7 +45,7 @@ const App = () => {
     } else {
       let tempList = selectedTitles;
 
-      tempList = tempList.filter(function(array) {
+      tempList = tempList.filter((array) => {
         return array !== selected;
       });
       setSelectedTitles(tempList);

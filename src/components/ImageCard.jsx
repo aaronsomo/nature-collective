@@ -19,7 +19,7 @@ const ImageCard = ({ data, handleSelect }) => {
         alt="img"
         src={thumbnailImg}
         onClick={() => {
-          setSelected(!selected);
+          setSelected((prevSelected) => !prevSelected);
           handleSelect(title);
         }}
       />
