@@ -10,7 +10,7 @@ const queryAPI = (input, successFn, errorFn) => {
       timeout: 5000,
     })
     .then((res) => {
-      console.log(res);
+      console.log(res.data.images);
       let {
         data: { images },
       } = res;

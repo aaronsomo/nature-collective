@@ -23,3 +23,26 @@ it('saves user input correctly in state', () => {
   input.simulate('change');
   expect(wrapper.find('input')).toHaveLength(1);
 });
+
+describe('api calls', () => {
+  let renderedComponent;
+  const mockResults = {
+    status: 200,
+    data: { after: 't3_hcrm8d', images: [{ title: 'test' }] },
+  };
+  const mockImages = mockResults.data.images;
+  const mockError = {
+    error: 500,
+    response: { data: { error: { message: 'Test Error' } } },
+  };
+  beforeEach(() => {
+    renderedComponent = mount(<App />);
+    // const resultsArray = renderedComponent.find("results")
+  });
+
+  it('resets results before querying for new data', () => {
+    renderedComponent.instance().setResults(mockImages);
+    renderedComponent.handleSubmitQuery('');
+    expect(renderedComponent.find('results')).toHaveLength(0);
+  });
+});
