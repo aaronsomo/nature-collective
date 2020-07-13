@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/aaronsomo/nature-collective/precache-manifest.2f0002d5d498930d2e5c2a4b02a76b90.js"
+  "/nature-collective/precache-manifest.18b553b852bb4e70fcdfef0b48cf4d70.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/aaronsomo/nature-collective/index.html", {
+workbox.routing.registerNavigationRoute("/nature-collective/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
