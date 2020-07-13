@@ -2,7 +2,7 @@
   "name": "nature-collective",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/aaronsomo/nature-collective",
+  "homepage": "https://aaronsomo.github.io/nature-collective",
   "dependencies": {
     "axios": "^0.18.0",
     "enzyme": "^3.8.0",
