@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="app-title">Nature Collective</h1>
+      <h1 className="app-title">The Nature Collective</h1>
       <Input onSubmit={handleSubmitQuery} clearApp={clearApp} />
       {results.length > 0 && (
         <SelectedTitles selectedTitles={selectedTitles} results={results} />

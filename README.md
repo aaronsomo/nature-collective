@@ -1,4 +1,4 @@
-# Nature Collective
+# The Nature Collective
 
 ## Table of Contents
 
